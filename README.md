@@ -22,4 +22,4 @@ A note taking app with full CRUD functionality, allowing for markdown syntax, wi
 ### Stretch
 
 * Refactor the app for Redux.
-* Make notes sharable.
+* Make notes sharable between users.
