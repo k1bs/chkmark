@@ -1,6 +1,6 @@
 # chck(mark)
 
-![logo](/public/logo800.png)
+![logo](/public/logo-readme.png)
 
 ## What is chck(mark) ?
 
