@@ -26,3 +26,4 @@ A note taking app with full CRUD functionality, allowing for markdown syntax, wi
 
 #### Stretch
 * Make notes sharable between users.
+* Write tests for front and back end.
