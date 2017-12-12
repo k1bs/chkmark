@@ -16,6 +16,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "deep-freeze": "0.0.1",
+    "expect": "^21.2.1",
     "redux-devtools": "^3.4.1"
   },
   "proxy": "http://localhost:3001"
