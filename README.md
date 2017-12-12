@@ -1,10 +1,10 @@
-# chck(mark)
+# chk(mark)
 
 ![logo](/public/logo-readme.png)
 
-## What is chck(mark) ?
+## What is chk(mark) ?
 
-chck(mark) is a note-taking app that makes your life a little bit richer. By using markdown, your notes come to life!
+chk(mark) is a note-taking app that makes your life a little bit richer. By using markdown, your notes come to life!
 
 This project will make use of a React/Rails stack, and will use an npm module to assist with the processing of markdown files.
 
