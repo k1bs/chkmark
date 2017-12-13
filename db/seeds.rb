@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Note.destroy_all
+
+test = User.create(username: 'test', email: 'test@test.com', password: 'password')
+
+Note.create!(user: test, note: 'This is my first note!!')
+Note.create!(user: test, note: 'This is my _second_ note!!!')
+
+puts "#{Note.count} notes created!"
