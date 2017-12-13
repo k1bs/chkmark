@@ -10,8 +10,12 @@ User.destroy_all
 Note.destroy_all
 
 test = User.create(username: 'test', email: 'test@test.com', password: 'password')
+test2 = User.create(username: 'test2', email: 'test2@test.com', password: 'password')
 
 Note.create!(user: test, note: 'This is my first note!!')
 Note.create!(user: test, note: 'This is my _second_ note!!!')
+
+Note.create!(user: test2, note: 'This is test2 first note!')
+Note.create!(user: test2, note: '# And again!!')
 
 puts "#{Note.count} notes created!"
