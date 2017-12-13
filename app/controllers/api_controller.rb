@@ -1,3 +1,4 @@
+# Api controller, used as parent for users, sessions controllers
 class ApiController < ApplicationController
   def require_login
     authenticate_token || render_unauthorized('Access denied')
