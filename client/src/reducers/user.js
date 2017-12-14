@@ -1,4 +1,6 @@
-const user = (state = null, action) => {
+// todo: set default state to null for production
+
+const user = (state = {token: 'asdcasdjrl', name: 'k1bs'}, action) => {
   switch (action.type) {
     case 'LOGOUT':
       return null

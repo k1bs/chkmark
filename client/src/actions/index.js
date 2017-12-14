@@ -1,4 +1,4 @@
-let nextNoteId = 0
+let nextNoteId = 2
 
 export const addNote = (text) => {
   return {

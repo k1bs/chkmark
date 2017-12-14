@@ -1,4 +1,6 @@
-const notes = (state = [], action) => {
+// todo: set default state to empty array for production
+
+const notes = (state = [{id: 0, note: 'First note'}, {id: 1, note: 'Second note'}], action) => {
   switch (action.type) {
     case 'ADD_NOTE':
       return [...state, {id: action.id, note: action.note}]
