@@ -1,13 +1,14 @@
 import React from 'react'
-import NavBar from '../containers/NavBar'
-import Footer from './Footer'
-import NoteContainer from '../containers/NoteContainer'
+// import NavBar from '../containers/NavBar'
+// import Footer from './Footer'
+// import NoteContainer from '../containers/NoteContainer'
 
 const App = () => (
   <div>
-    <NavBar />
+    {/* <NavBar />
     <NoteContainer />
-    <Footer />
+    <Footer /> */}
+    <p>Hello world with store!!</p>
   </div>
 )
 
