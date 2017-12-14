@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const NoteSmall = ({ onClick, note }) => {
+const NoteSmall = ({ onCurrentClick, note }) => {
   return (
-    <li onClick={onClick}>{note}</li>
+    <li>
+      <span onClick={onCurrentClick}>{note}</span>
+    </li>
   )
 }
 
 NoteSmall.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onCurrentClick: PropTypes.func.isRequired,
   note: PropTypes.string.isRequired
 }
 

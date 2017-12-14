@@ -2,16 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NoteHero from '../components/NoteHero'
 import NoteList from '../components/NoteList'
-import { setCurrentNote } from '../actions'
+import { setCurrentNote, deleteNote } from '../actions'
 
 class NoteContainer extends Component {
   render () {
-    const { notes, currentNote, clickCurrentNote } = this.props
+    const { notes, currentNote, onCurrentClick, onDeleteClick } = this.props
     return (
       <div className='app-body'>
         <p>Hello world from NoteContainer</p>
-        <NoteList notes={notes} clickCurrentNote={clickCurrentNote} />
-        <NoteHero notes={notes} currentNote={currentNote} />
+        <NoteList notes={notes}
+          onCurrentClick={onCurrentClick} />
+        <NoteHero notes={notes}
+          currentNote={currentNote}
+          onDeleteClick={onDeleteClick} />
       </div>
     )
   }
@@ -26,7 +29,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    clickCurrentNote: (id) => dispatch(setCurrentNote(id))
+    onCurrentClick: (id) => dispatch(setCurrentNote(id)),
+    onDeleteClick: (id) => dispatch(deleteNote(id))
   }
 }
 

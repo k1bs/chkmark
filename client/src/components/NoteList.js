@@ -2,7 +2,7 @@ import React from 'react'
 import NoteSmall from './NoteSmall'
 import PropTypes from 'prop-types'
 
-const NoteList = ({notes, clickCurrentNote}) => {
+const NoteList = ({notes, onCurrentClick, onDeleteClick}) => {
   return (
     <ul>
       {notes.map((note) => {
@@ -10,7 +10,8 @@ const NoteList = ({notes, clickCurrentNote}) => {
           <NoteSmall
             key={note.id}
             {...note}
-            onClick={() => clickCurrentNote(note.id)}
+            onCurrentClick={() => onCurrentClick(note.id)}
+            onDeleteClick={() => onDeleteClick(note.id)}
           />
         )
       })}
@@ -23,7 +24,8 @@ NoteList.proptypes = {
     id: PropTypes.number.isRequired,
     note: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  clickCurrentNote: PropTypes.func.isRequired
+  onCurrentClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired
 }
 
 export default NoteList
