@@ -6,6 +6,8 @@ const currentNote = (state = 1, action) => {
       return action.id
     case 'CLEAR_CURRENT_NOTE':
       return null
+    case 'DELETE_NOTE':
+      return state === action.id ? null : state
     default:
       return state
   }

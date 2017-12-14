@@ -5,7 +5,9 @@ const NoteHero = ({ notes, currentNote }) => {
   return (
     <div>
       <p>
-        {notes.find((note) => note.id === currentNote).note}
+        {currentNote !== null
+          ? notes.find((note) => note.id === currentNote).note
+          : 'Please select a note!'}
       </p>
     </div>
   )
