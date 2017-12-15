@@ -7,7 +7,6 @@ const NoteEdit = ({note, onUpdateClick}) => {
       <form onSubmit={(e) => {
         e.preventDefault()
         onUpdateClick(note.id, input.value)
-        console.log(JSON.stringify(input.value))
       }}>
         <textarea
           ref={node => {
