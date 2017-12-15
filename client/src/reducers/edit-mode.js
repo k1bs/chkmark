@@ -1,7 +1,9 @@
 const editMode = (state = false, action) => {
   switch (action.type) {
-    case 'TOGGLE_EDIT':
-      return !state
+    case 'EDIT_MODE':
+      return action.value
+    case 'UPDATE_NOTE':
+      return false
     default:
       return state
   }

@@ -50,9 +50,10 @@ export const clearCurrentNote = () => {
   }
 }
 
-export const toggleEdit = () => {
+export const editMode = (value) => {
   return {
-    type: 'TOGGLE_EDIT'
+    type: 'EDIT_MODE',
+    value
   }
 }
 
