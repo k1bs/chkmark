@@ -63,3 +63,10 @@ export const fetchingNotes = (value) => {
     value
   }
 }
+
+export const viewMode = (value) => {
+  return {
+    type: 'VIEW_MODE',
+    value
+  }
+}
