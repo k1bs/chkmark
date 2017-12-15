@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 const NoteSmall = ({ onCurrentClick, note }) => {
   return (
-    <li>
+    <div className='note-small'>
       <span onClick={onCurrentClick}>{note}</span>
-    </li>
+    </div>
   )
 }
 

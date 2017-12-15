@@ -4,7 +4,7 @@ import user from './user'
 import fetchingNotes from './fetching-notes'
 import editMode from './edit-mode'
 import currentNote from './current-note'
-import view from './view'
+import viewMode from './view-mode'
 
 const chkmarkApp = combineReducers({
   notes,
@@ -12,7 +12,7 @@ const chkmarkApp = combineReducers({
   fetchingNotes,
   editMode,
   currentNote,
-  view
+  viewMode
 })
 
 export default chkmarkApp

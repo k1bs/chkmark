@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NoteHero from '../components/NoteHero'
 import NoteList from '../components/NoteList'
+import Home from '../components/Home'
 import { setCurrentNote, deleteNote, updateNote, editMode } from '../actions'
 
 class BodyContainer extends Component {
+  renderCorrectView (props) {
+
+  }
+
   render () {
     const { notes,
       currentNote,
+      viewMode,
       onCurrentClick,
       onDeleteClick,
       editMode,
@@ -15,15 +21,18 @@ class BodyContainer extends Component {
       onEditClick } = this.props
     return (
       <div className='app-body'>
-        <p>Hello world from BodyContainer</p>
-        <NoteList notes={notes}
-          onCurrentClick={onCurrentClick} />
-        <NoteHero notes={notes}
-          currentNote={currentNote}
-          onDeleteClick={onDeleteClick}
-          editMode={editMode}
-          onUpdateClick={onUpdateClick}
-          onEditClick={onEditClick} />
+        {viewMode === 'NOTE' &&
+        <div className='note-container'>
+          <NoteList notes={notes}
+            onCurrentClick={onCurrentClick} />
+          <NoteHero notes={notes}
+            currentNote={currentNote}
+            onDeleteClick={onDeleteClick}
+            editMode={editMode}
+            onUpdateClick={onUpdateClick}
+            onEditClick={onEditClick} />
+        </div>}
+        {viewMode === 'HOME' && <Home />}
       </div>
     )
   }
@@ -33,6 +42,7 @@ const mapStateToProps = (state) => {
   return {
     notes: state.notes,
     currentNote: state.currentNote,
+    viewMode: state.viewMode,
     editMode: state.editMode
   }
 }

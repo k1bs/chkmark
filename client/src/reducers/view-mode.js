@@ -1,4 +1,4 @@
-const view = (state = 'NOTE', action) => {
+const viewMode = (state = 'NOTE', action) => {
   switch (action.type) {
     case 'VIEW_MODE':
       return action.value
@@ -7,4 +7,4 @@ const view = (state = 'NOTE', action) => {
   }
 }
 
-export default view
+export default viewMode

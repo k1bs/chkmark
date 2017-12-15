@@ -6,12 +6,14 @@ import NoteView from './NoteView'
 
 const NoteHero = ({ notes, currentNote, onDeleteClick, editMode, onUpdateClick, onEditClick }) => {
   return (
-    <div>
+    <div className='note-hero'>
       {currentNote === null
-        ? <p>'Please select a note!'</p>
+        ? <p><span className='please-select'>'Please select a note!'</span></p>
         : <div>
-          <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw' aria-hidden='true' /></span>
-          <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
+          <div className='hero-button-module'>
+            <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw' aria-hidden='true' /></span>
+            <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
+          </div>
           {editMode
               ? <NoteEdit note={notes.find((note) => note.id === currentNote)}
                 onUpdateClick={onUpdateClick} />

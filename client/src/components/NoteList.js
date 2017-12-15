@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const NoteList = ({notes, onCurrentClick, onDeleteClick}) => {
   return (
-    <ul>
+    <div className='note-list'>
       {notes.map((note) => {
         return (
           <NoteSmall
@@ -15,7 +15,7 @@ const NoteList = ({notes, onCurrentClick, onDeleteClick}) => {
           />
         )
       })}
-    </ul>
+    </div>
   )
 }
 
