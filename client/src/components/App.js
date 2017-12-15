@@ -1,12 +1,12 @@
 import React from 'react'
 import NavBar from '../containers/NavBar'
 import Footer from './Footer'
-import NoteContainer from '../containers/NoteContainer'
+import NotesContainer from '../containers/NotesContainer'
 
 const App = () => (
   <div>
     <NavBar />
-    <NoteContainer />
+    <NotesContainer />
     <Footer />
   </div>
 )

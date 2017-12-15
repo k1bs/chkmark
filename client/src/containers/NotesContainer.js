@@ -4,12 +4,12 @@ import NoteHero from '../components/NoteHero'
 import NoteList from '../components/NoteList'
 import { setCurrentNote, deleteNote } from '../actions'
 
-class NoteContainer extends Component {
+class NotesContainer extends Component {
   render () {
     const { notes, currentNote, onCurrentClick, onDeleteClick } = this.props
     return (
       <div className='app-body'>
-        <p>Hello world from NoteContainer</p>
+        <p>Hello world from NotesContainer</p>
         <NoteList notes={notes}
           onCurrentClick={onCurrentClick} />
         <NoteHero notes={notes}
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(NotesContainer)
