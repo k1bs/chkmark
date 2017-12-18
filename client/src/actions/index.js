@@ -1,8 +1,6 @@
 import fetch from 'cross-fetch'
 import Auth from '../modules/Auth'
 
-let nextNoteId = 2
-
 export const addNote = (id, text) => {
   return {
     type: 'ADD_NOTE',
