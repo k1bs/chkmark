@@ -83,6 +83,10 @@ strong, b {
   padding: 30px;
 }
 
+.note-edit form {
+  display: block;
+}
+
 footer {
   text-align: center;
   flex: 0;
