@@ -1,18 +1,32 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { viewMode, attemptLogout } from '../actions'
 
-const NavBar = () => {
+const NavBar = ({ dispatch, currentViewMode, user }) => {
   return (
     <div className='nav-bar'>
       <div className='nav-list'>
-        <span>Notes</span>
-        <span>Logout</span>
-        <span>Profile</span>
+        {user
+          ? <div>
+            <span onClick={() => dispatch(viewMode('NOTE'))}>Notes</span>
+            <span onClick={() => dispatch(attemptLogout())}>Logout</span>
+            <span onClick={() => dispatch(viewMode('PROFILE'))}>Profile</span>
+          </div>
+          : <span onClick={() => dispatch(viewMode('LOGIN'))}>Login</span>}
+
       </div>
       <div className='logo-div'>
-        <p><img className='nav-logo-img' src='/logo-transparent.png' /></p>
+        <p><img alt='logo' className='nav-logo-img' src='/logo-transparent.png' /></p>
       </div>
     </div>
   )
 }
 
-export default NavBar
+const mapStateToProps = (state) => {
+  return {
+    currentViewMode: state.viewMode,
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, null)(NavBar)
