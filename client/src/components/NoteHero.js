@@ -4,21 +4,20 @@ import PropTypes from 'prop-types'
 import NoteEdit from './NoteEdit'
 import NoteView from './NoteView'
 
-const NoteHero = ({ notes, currentNote, onDeleteClick, editMode, onUpdateClick, onEditClick }) => {
+const NoteHero = ({ notes, currentNote, onDeleteClick, editMode, onUpdateClick, onEditClick, onAddClick }) => {
+  const handleClick = () => currentNote !== null ? onUpdateClick : onAddClick
   return (
     <div className='note-hero'>
-      {currentNote === null
-        ? <p><span className='please-select'>'Please select a note!'</span></p>
-        : <div>
-          <div className='hero-button-module'>
-            <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw' aria-hidden='true' /></span>
-            <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
-          </div>
-          {editMode
-              ? <NoteEdit note={notes.find((note) => note.id === currentNote)}
-                onUpdateClick={onUpdateClick} />
-              : <NoteView note={notes.find((note) => note.id === currentNote)} />}
-        </div>}
+      <div className='hero-button-module'>
+        <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw' aria-hidden='true' /></span>
+        <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
+      </div>
+      {editMode
+        ? <NoteEdit note={notes.find((note) => note.id === currentNote)}
+          onUpdateClick={handleClick()} />
+        : currentNote !== null
+          ? <NoteView note={notes.find((note) => note.id === currentNote)} />
+          : <p>Please select or create a note!</p>}
     </div>
   )
 }
@@ -32,6 +31,7 @@ NoteHero.propTypes = {
   onDeleteClick: PropTypes.func.isRequired,
   onUpdateClick: PropTypes.func.isRequired,
   onEditClick: PropTypes.func.isRequired,
+  onAddClick: PropTypes.func.isRequired,
   editMode: PropTypes.bool.isRequired
 }
 
