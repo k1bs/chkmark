@@ -2,9 +2,10 @@ import React from 'react'
 import NoteSmall from './NoteSmall'
 import PropTypes from 'prop-types'
 
-const NoteList = ({notes, onCurrentClick, onDeleteClick}) => {
+const NoteList = ({ notes, onCurrentClick, onDeleteClick, onNewClick }) => {
   return (
     <div className='note-list'>
+      <i onClick={onNewClick} className='fa fa-plus fa-fw' aria-hidden='true' />
       {notes.map((note) => {
         return (
           <NoteSmall
@@ -12,7 +13,7 @@ const NoteList = ({notes, onCurrentClick, onDeleteClick}) => {
             {...note}
             onCurrentClick={() => onCurrentClick(note.id)}
             onDeleteClick={() => onDeleteClick(note.id)}
-          />
+            />
         )
       })}
     </div>
