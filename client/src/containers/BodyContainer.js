@@ -3,13 +3,10 @@ import { connect } from 'react-redux'
 import NoteHero from '../components/NoteHero'
 import NoteList from '../components/NoteList'
 import Home from '../components/Home'
-import { setCurrentNote, deleteNote, updateNote, editMode } from '../actions'
+import Login from '../components/Login'
+import { setCurrentNote, deleteNote, updateNote, editMode, addNote, newNote, attemptLogin } from '../actions'
 
 class BodyContainer extends Component {
-  renderCorrectView (props) {
-
-  }
-
   render () {
     const { notes,
       currentNote,
@@ -18,21 +15,27 @@ class BodyContainer extends Component {
       onDeleteClick,
       editMode,
       onUpdateClick,
-      onEditClick } = this.props
+      onEditClick,
+      onAddClick,
+      onNewClick,
+      onLoginClick } = this.props
     return (
       <div className='app-body'>
         {viewMode === 'NOTE' &&
         <div className='note-container'>
           <NoteList notes={notes}
-            onCurrentClick={onCurrentClick} />
+            onCurrentClick={onCurrentClick}
+            onNewClick={onNewClick} />
           <NoteHero notes={notes}
             currentNote={currentNote}
             onDeleteClick={onDeleteClick}
             editMode={editMode}
             onUpdateClick={onUpdateClick}
-            onEditClick={onEditClick} />
+            onEditClick={onEditClick}
+            onAddClick={onAddClick} />
         </div>}
         {viewMode === 'HOME' && <Home />}
+        {viewMode === 'LOGIN' && <Login onLoginClick={onLoginClick} />}
       </div>
     )
   }
@@ -52,7 +55,10 @@ const mapDispatchToProps = (dispatch) => {
     onCurrentClick: (id) => dispatch(setCurrentNote(id)),
     onDeleteClick: (id) => dispatch(deleteNote(id)),
     onUpdateClick: (id, text) => dispatch(updateNote(id, text)),
-    onEditClick: (value) => dispatch(editMode(value))
+    onEditClick: (value) => dispatch(editMode(value)),
+    onAddClick: (text) => dispatch(addNote(text)),
+    onNewClick: () => dispatch(newNote()),
+    onLoginClick: (username, password) => dispatch(attemptLogin(username, password))
   }
 }
 
