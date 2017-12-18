@@ -1,6 +1,6 @@
 // todo: set default state to null for production
 
-const currentNote = (state = 1, action) => {
+const currentNote = (state = null, action) => {
   switch (action.type) {
     case 'ADD_NOTE':
     case 'SET_CURRENT_NOTE':

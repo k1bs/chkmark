@@ -4,7 +4,7 @@ class NotesController < ApiController
 
   def index
     user = User.find_by_auth_token!(request.headers[:token])
-    notes = user.notes
+    notes = user.notes.order(updated_at: :desc)
     render json: {
       notes: notes
     }
@@ -15,12 +15,25 @@ class NotesController < ApiController
     render json: { note: note }
   end
 
+  def destroy
+    Note.destroy(params[:id])
+    render json: { message: 'delete successful' }
+  end
+
+  def update
+    note = Note.update(params[:id], text: params[:text])
+    render json: {
+      message: 'ok',
+      note: note
+    }
+  end
+
   def create
     note = Note.new(note_params)
     note.user = current_user
 
-    if monster.save
-      render json: { message: 'ok', note: 'note' }
+    if note.save
+      render json: { message: 'ok', note: note }
     else
       render json: { message: 'could not create note' }
     end
@@ -29,6 +42,6 @@ class NotesController < ApiController
   private
 
   def note_params
-    params.require(:note).permit(:note)
+    params.require(:note).permit(:text)
   end
 end

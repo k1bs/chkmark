@@ -1,9 +1,11 @@
-const viewMode = (state = 'NOTE', action) => {
+const viewMode = (state = 'LOGIN', action) => {
   switch (action.type) {
     case 'VIEW_MODE':
       return action.value
     case 'LOGIN':
       return 'NOTE'
+    case 'LOGOUT':
+      return 'LOGIN'
     default:
       return state
   }

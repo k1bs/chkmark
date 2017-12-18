@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import NoteSmall from './NoteSmall'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-const NoteList = ({ notes, onCurrentClick, onDeleteClick, onNewClick }) => {
-  return (
-    <div className='note-list'>
-      <i onClick={onNewClick} className='fa fa-plus fa-fw' aria-hidden='true' />
-      {notes.map((note) => {
-        return (
-          <NoteSmall
-            key={note.id}
-            {...note}
-            onCurrentClick={() => onCurrentClick(note.id)}
-            onDeleteClick={() => onDeleteClick(note.id)}
+class NoteList extends Component {
+  render () {
+    const { notes, onCurrentClick, onDeleteClick, onNewClick } = this.props
+    return (
+      <div className='note-list'>
+        <i onClick={onNewClick} className='fa fa-plus fa-fw' aria-hidden='true' />
+        {notes.map((note) => {
+          return (
+            <NoteSmall
+              key={note.id}
+              {...note}
+              onCurrentClick={() => onCurrentClick(note.id)}
+              onDeleteClick={() => onDeleteClick(note.id)}
             />
-        )
-      })}
-    </div>
-  )
+          )
+        })}
+      </div>
+    )
+  }
 }
 
 NoteList.proptypes = {
@@ -29,4 +33,4 @@ NoteList.proptypes = {
   onDeleteClick: PropTypes.func.isRequired
 }
 
-export default NoteList
+export default connect()(NoteList)

@@ -13,7 +13,7 @@ const NoteEdit = ({note, onUpdateClick}) => {
           ref={node => {
             input = node
           }}
-          defaultValue={note ? note.note : ''} />
+          defaultValue={note ? note.text : ''} />
       </form>
     </div>
   )
