@@ -1,3 +1,6 @@
+import fetch from 'cross-fetch'
+import Auth from '../modules/Auth'
+
 let nextNoteId = 2
 
 export const addNote = (text) => {
@@ -5,6 +8,12 @@ export const addNote = (text) => {
     type: 'ADD_NOTE',
     id: nextNoteId++,
     note: text
+  }
+}
+
+export const newNote = () => {
+  return {
+    type: 'NEW_NOTE'
   }
 }
 
@@ -26,6 +35,43 @@ export const deleteNote = (id) => {
 export const logout = () => {
   return {
     type: 'LOGOUT'
+  }
+}
+
+export const attemptLogout = () => {
+  return (dispatch) => {
+    const token = Auth.getToken()
+    fetch('/logout', {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token ${token}`,
+        token
+      }
+    }).then(res => {
+      Auth.deauthenticateUser()
+      dispatch(logout())
+    })
+  }
+}
+
+export const attemptLogin = (username, password) => {
+  return (dispatch) => {
+    fetch('/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(json => {
+        if (json.token) {
+          Auth.authenticateToken(json.token)
+          dispatch(login(json.token, null))
+        }
+      }).catch(err => console.log(err))
   }
 }
 
