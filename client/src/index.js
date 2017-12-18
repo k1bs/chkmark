@@ -1,13 +1,21 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import { createLogger } from 'redux-logger'
+import thunkMiddleware from 'redux-thunk'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
 
+const loggerMiddleware = createLogger()
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(
+    applyMiddleware(thunkMiddleware, loggerMiddleware)
+  )
 )
 
 render(
