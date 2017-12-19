@@ -160,6 +160,32 @@ export const attemptLogin = (username, password) => {
   }
 }
 
+export const attemptRegister = (username, password, name, email) => {
+  return (dispatch) => {
+    fetch('/users', {
+      method: 'POST',
+      body: JSON.stringify({
+        user: {
+          username,
+          password,
+          name,
+          email
+        }
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(json => {
+        if (json.token) {
+          Auth.authenticateToken(json.token)
+          dispatch(login(json.token, null))
+          dispatch(viewMode('NOTE'))
+        }
+      }).catch(err => console.log(err))
+  }
+}
+
 export const login = (token, name) => {
   return {
     type: 'LOGIN',
@@ -199,5 +225,22 @@ export const viewMode = (value) => {
   return {
     type: 'VIEW_MODE',
     value
+  }
+}
+
+export const attemptProfile = () => {
+  return (dispatch) => {
+    const token = Auth.getToken()
+    dispatch(fetchingNotes(true))
+    fetch('/profile', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Token ${token}`,
+        token
+      }
+    }).then(res => res.json())
+      .then(json => {
+        console.log(json)
+      }).catch(err => console.log(err))
   }
 }
