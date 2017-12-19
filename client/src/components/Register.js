@@ -8,7 +8,7 @@ const Register = ({ onRegisterClick }) => {
   let email
   // let errorMessage = ''
   return (
-    <div>
+    <div className='auth-form'>
       <form onSubmit={(e) => {
         e.preventDefault()
         console.log('running password match')

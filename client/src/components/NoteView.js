@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 
 const NoteView = ({note}) => {
   return (
-    <ReactMarkdown source={note.text} />
+    <ReactMarkdown className='note-view' source={note.text} />
   )
 }
 

@@ -1,4 +1,4 @@
-const viewMode = (state = 'LOGIN', action) => {
+const viewMode = (state = 'HOME', action) => {
   switch (action.type) {
     case 'VIEW_MODE':
       return action.value

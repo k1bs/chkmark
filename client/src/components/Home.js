@@ -2,7 +2,10 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <p>Welcome to chk(mark)!</p>
+    <div className='home-container'>
+      <img alt='logo' className='home-logo-img' src='/logo-transparent.png' />
+      <p>A Markdown-enabled note-taking application</p>
+    </div>
   )
 }
 

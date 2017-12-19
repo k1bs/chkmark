@@ -33,7 +33,9 @@ class NoteContainer extends Component {
             onEditClick={onEditClick}
             onAddClick={onAddClick} />
         </div>
-        : <div className='spinner-div' />)
+        : <div className='spinner-div'>
+          <i className='fa fa-circle-o-notch fa-spin fa-3x fa-fw' />
+        </div>)
   }
 }
 

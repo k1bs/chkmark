@@ -8,7 +8,7 @@ class NoteList extends Component {
     const { notes, onCurrentClick, onDeleteClick, onNewClick } = this.props
     return (
       <div className='note-list'>
-        <i onClick={onNewClick} className='fa fa-plus fa-fw' aria-hidden='true' />
+        <i onClick={onNewClick} className='fa fa-plus fa-fw fa-lg' aria-hidden='true' />
         {notes.map((note) => {
           return (
             <NoteSmall

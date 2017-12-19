@@ -3,25 +3,26 @@ import { connect } from 'react-redux'
 import { viewMode, attemptLogout, attemptProfile } from '../actions'
 
 const NavBar = ({ dispatch, currentViewMode, user }) => {
-  console.log(user)
   return (
     <div className='nav-bar'>
       <div className='nav-list'>
         {user.token
-          ? <div>
+          ? <div className='nav-module'>
             <span onClick={() => dispatch(viewMode('NOTE'))}>Notes</span>
             <span onClick={() => dispatch(attemptLogout())}>Logout</span>
             <span onClick={() => dispatch(attemptProfile())}>Profile</span>
           </div>
-          : <div>
+          : <div className='nav-module'>
             <span onClick={() => dispatch(viewMode('LOGIN'))}>Login</span>
             <span onClick={() => dispatch(viewMode('REGISTER'))}>Register</span>
           </div>}
-
+        <span>How-To</span>
       </div>
-      <div className='logo-div'>
-        <p><img alt='logo' className='nav-logo-img' src='/logo-transparent.png' /></p>
+      {currentViewMode !== 'HOME'
+      ? <div className='logo-div'>
+        <img alt='logo' className='nav-logo-img' src='/logo-transparent.png' />
       </div>
+      : ''}
     </div>
   )
 }

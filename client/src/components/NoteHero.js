@@ -8,16 +8,24 @@ const NoteHero = ({ notes, currentNote, onDeleteClick, editMode, onUpdateClick, 
   const handleClick = () => currentNote !== null ? onUpdateClick : onAddClick
   return (
     <div className='note-hero'>
-      <div className='hero-button-module'>
-        <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw' aria-hidden='true' /></span>
-        <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
-      </div>
-      {editMode
-        ? <NoteEdit note={notes.find((note) => note.id === currentNote)}
-          onUpdateClick={handleClick()} />
-        : currentNote !== null
-          ? <NoteView note={notes.find((note) => note.id === currentNote)} />
-          : <p>Please select or create a note!</p>}
+      {currentNote === null && !editMode
+        ? <span className='select-another-span'>Please select or create a note!</span>
+        : editMode
+          ? <div className='note-hero-inner'>
+            <div className='hero-button-module'>
+              <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw fa-lg' aria-hidden='true' /></span>
+              <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
+            </div>
+            <NoteEdit note={notes.find((note) => note.id === currentNote)}
+              onUpdateClick={handleClick()} />
+          </div>
+          : <div className='note-hero-inner'>
+            <div className='hero-button-module'>
+              <span><i onClick={() => onEditClick(true)} className='fa fa-pencil fa-fw fa-lg' aria-hidden='true' /></span>
+              <Delete onDeleteClick={onDeleteClick} currentNote={currentNote} />
+            </div>
+            <NoteView note={notes.find((note) => note.id === currentNote)} />
+          </div>}
     </div>
   )
 }
