@@ -4,6 +4,7 @@ import NoteContainer from './NoteContainer'
 import Home from '../components/Home'
 import Register from '../components/Register'
 import Profile from '../components/Profile'
+import HowTo from '../components/HowTo'
 import Login from '../components/Login'
 import { attemptLogin, attemptRegister } from '../actions'
 
@@ -20,6 +21,7 @@ class BodyContainer extends Component {
         {viewMode === 'LOGIN' && <Login onLoginClick={onLoginClick} />}
         {viewMode === 'REGISTER' && <Register onRegisterClick={onRegisterClick} />}
         {viewMode === 'PROFILE' && <Profile user={user} />}
+        {viewMode === 'INSTRUCTIONS' && <HowTo />}
       </div>
     )
   }

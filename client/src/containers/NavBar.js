@@ -16,7 +16,7 @@ const NavBar = ({ dispatch, currentViewMode, user }) => {
             <span onClick={() => dispatch(viewMode('LOGIN'))}>Login</span>
             <span onClick={() => dispatch(viewMode('REGISTER'))}>Register</span>
           </div>}
-        <span>How-To</span>
+        <span onClick={() => dispatch(viewMode('INSTRUCTIONS'))}>Instructions</span>
       </div>
       {currentViewMode !== 'HOME'
       ? <div className='logo-div'>

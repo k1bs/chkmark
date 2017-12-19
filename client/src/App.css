@@ -12,12 +12,13 @@ pre {
   background-color: lightgrey;
   padding: 6px;
   border-radius: 4px;
+  margin-bottom: 1em;
 }
 
-code {
+/* code {
   background-color: lightgrey;
   border-radius: 4px;
-}
+} */
 
 p {
   margin: 1em 0;
@@ -45,6 +46,11 @@ h4 {
 
 em {
   font-style: italic;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 30px;
 }
 
 strong, b {
@@ -189,7 +195,12 @@ footer {
   color: #F0F0F0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav-bar {
+  flex: 0;
   text-align: center;
   display: inline-flex;
   justify-content: space-between;
@@ -198,6 +209,12 @@ footer {
   background-color: #3C3C3C;
   color: #F0F0F0;
   text-transform: lowercase;
+  min-height: 60px;
+}
+
+.howto-container {
+  max-width: 60vw;
+  margin: 20px auto;
 }
 
 .profile-container {
