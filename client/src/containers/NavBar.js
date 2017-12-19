@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { viewMode, attemptLogout } from '../actions'
+import { viewMode, attemptLogout, attemptProfile } from '../actions'
 
 const NavBar = ({ dispatch, currentViewMode, user }) => {
   return (
@@ -10,9 +10,12 @@ const NavBar = ({ dispatch, currentViewMode, user }) => {
           ? <div>
             <span onClick={() => dispatch(viewMode('NOTE'))}>Notes</span>
             <span onClick={() => dispatch(attemptLogout())}>Logout</span>
-            <span onClick={() => dispatch(viewMode('PROFILE'))}>Profile</span>
+            <span onClick={() => dispatch(attemptProfile())}>Profile</span>
           </div>
-          : <span onClick={() => dispatch(viewMode('LOGIN'))}>Login</span>}
+          : <div>
+            <span onClick={() => dispatch(viewMode('LOGIN'))}>Login</span>
+            <span onClick={() => dispatch(viewMode('REGISTER'))}>Register</span>
+          </div>}
 
       </div>
       <div className='logo-div'>
