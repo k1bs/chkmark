@@ -9,11 +9,11 @@
 User.destroy_all
 Note.destroy_all
 
-test = User.create(username: 'test', email: 'test@test.com', password: 'password')
-test2 = User.create(username: 'test2', email: 'test2@test.com', password: 'password')
+k1bs = User.create(username: 'k1bs', email: 'test@test.com', password: 'password', name: 'k1bs')
+test2 = User.create(username: 'test2', email: 'test2@test.com', password: 'password', name: 'other user')
 
-Note.create!(user: test, text: 'This is my first note!!')
-Note.create!(user: test, text: 'This is my _second_ note!!!')
+Note.create!(user: k1bs, text: 'This is my first note!!')
+Note.create!(user: k1bs, text: 'This is my _second_ note!!!')
 
 Note.create!(user: test2, text: 'This is test2 first note!')
 Note.create!(user: test2, text: '# And again!!')
