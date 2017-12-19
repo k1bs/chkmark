@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import { viewMode, attemptLogout, attemptProfile } from '../actions'
 
 const NavBar = ({ dispatch, currentViewMode, user }) => {
+  console.log(user)
   return (
     <div className='nav-bar'>
       <div className='nav-list'>
-        {user
+        {user.token
           ? <div>
             <span onClick={() => dispatch(viewMode('NOTE'))}>Notes</span>
             <span onClick={() => dispatch(attemptLogout())}>Logout</span>

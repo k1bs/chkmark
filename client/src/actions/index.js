@@ -228,6 +228,13 @@ export const viewMode = (value) => {
   }
 }
 
+export const setUser = (user) => {
+  return {
+    type: 'SET_USER',
+    user
+  }
+}
+
 export const attemptProfile = () => {
   return (dispatch) => {
     const token = Auth.getToken()
@@ -240,7 +247,8 @@ export const attemptProfile = () => {
       }
     }).then(res => res.json())
       .then(json => {
-        console.log(json)
+        dispatch(setUser(json.user))
+        dispatch(viewMode('PROFILE'))
       }).catch(err => console.log(err))
   }
 }
