@@ -1,29 +1,38 @@
-# chk(mark)
-
 ![logo](/public/logo-readme.png)
 
 ## What is chk(mark) ?
 
 chk(mark) is a note-taking app that makes your life a little bit richer. By using markdown, your notes come to life!
 
-This project will make use of a React(redux)/Rails stack, and will use an npm module to assist with the processing of markdown files.
+## Getting Started
 
-![wireframe 1](/public/wire1.jpg)
-* A user will be able to use markdown syntax while on the edit page...
+Using chk(mark) is simple!
 
-![wireframe 2](/public/wire2.jpg)
-* And then, on the view page, they will be able to see the markdown parsed properly.
+After creating your user, simply click the `+` icon to add your first note.
 
-## Anticipated challenges
-I foresee that I will have difficulty implementing the parsing of the markdown, and presenting it in an editable format.
+The provided text field allows you to type plain text or [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-CheatsheetÂ).
 
-Also, creating the app using Redux will prove difficult as it will be my first time.
+For instance, entering this:
 
-## Stages
+```markdown
+[I'm an inline-style link](https://www.google.com)
+`inline.Code`
+_this is italics_
+```
 
-#### MVP
-A note taking app with full CRUD functionality, allowing for markdown syntax, with auth and multiple users.
+renders as:
 
-#### Stretch
-* Make notes sharable between users.
-* Write tests for front and back end.
+[I'm an inline-style link](https://www.google.com)  
+`inline.Code`  
+_this is italics_
+
+## Built With
+
+* [React](https://reactjs.org/) and [Redux](https://redux.js.org/) - Frontend frameworks
+* [Ruby on Rails](http://rubyonrails.org/) - Backend API
+* [react-markdown](https://github.com/rexxars/react-markdown) by rexxars - Markdown parser for react
+
+## Acknowledgements
+
+* Thanks to [John Master](https://github.com/jsm13) for being a wonderful guide to learning Redux.
+* Also, thanks to [Hrishi Mittal](https://github.com/hrishimittal) for writing [this](https://medium.freecodecamp.org/every-time-you-build-a-to-do-list-app-a-puppy-dies-505b54637a5d) article.
