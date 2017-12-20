@@ -21,7 +21,7 @@ const Login = ({ onLoginClick }) => {
           ref={node => {
             password = node
           }} />
-        <input type='submit' value='Login' />
+        <input type='submit' value='login' />
       </form>
     </div>
   )

@@ -19,13 +19,13 @@ const Register = ({ onRegisterClick }) => {
       }}>
         <input
           type='text'
-          placeholder='Username'
+          placeholder='username'
           ref={node => {
             username = node
           }} />
         <input
           type='password'
-          placeholder='Password'
+          placeholder='password'
           ref={node => {
             password = node
           }} />
@@ -37,17 +37,17 @@ const Register = ({ onRegisterClick }) => {
           }} /> */}
         <input
           type='text'
-          placeholder='Name'
+          placeholder='name'
           ref={node => {
             name = node
           }} />
         <input
           type='email'
-          placeholder='Email'
+          placeholder='email'
           ref={node => {
             email = node
           }} />
-        <input type='submit' value='Register' />
+        <input type='submit' value='register' />
       </form>
       {/* <h4>{errorMessage}</h4> */}
     </div>
