@@ -1,5 +1,10 @@
 ![logo](/public/logo-readme.png)
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![GitHub issues](https://img.shields.io/github/issues/k1bs/chkmark.svg)](https://github.com/k1bs/chkmark/issues)
+[![GitHub stars](https://img.shields.io/github/stars/k1bs/chkmark.svg)](https://github.com/k1bs/chkmark/stargazers)
+
+
 ## What is chk(mark) ?
 
 chk(mark) is a note-taking app that makes your life a little bit richer. By using markdown, your notes come to life!
