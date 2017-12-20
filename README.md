@@ -89,3 +89,5 @@ Concerning Markdown parsing, I decided early on to use a basic parser, and handl
 
 * Thanks to [John Master](https://github.com/jsm13) for being a wonderful guide to learning Redux.
 * Also, thanks to [Hrishi Mittal](https://github.com/hrishimittal) for writing [this](https://medium.freecodecamp.org/every-time-you-build-a-to-do-list-app-a-puppy-dies-505b54637a5d) article.
+
+![rails logo](https://www.harrywhelchel.com/content/images/2015/10/rails-1.png)![react logo](https://cdn-images-1.medium.com/max/256/1*XgMpgjwwDrHLOiS748kpBg.png)![redux logo](/public/redux.png)
