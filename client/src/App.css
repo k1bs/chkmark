@@ -208,6 +208,11 @@ strong, b {
   align-self: stretch;
 }
 
+.note-view img {
+  max-width: 100%;
+  height: auto;
+}
+
 footer {
   text-align: center;
   flex: 0;
