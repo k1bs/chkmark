@@ -57,6 +57,15 @@ strong, b {
   font-weight: bold;
 }
 
+table, td, th {
+  border: 1px solid lightgrey;
+  padding: 0.4em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .App {
   display: flex;
   flex-direction: column;
