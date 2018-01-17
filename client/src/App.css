@@ -48,6 +48,13 @@ em {
   font-style: italic;
 }
 
+hr {
+  display: block;
+  border: none;
+  border-top: 4px solid lightgrey;
+  margin: 2em 0;
+}
+
 ul {
   list-style-type: disc;
   margin-left: 30px;
