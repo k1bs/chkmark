@@ -33,7 +33,7 @@ const NoteHero = ({ notes, currentNote, onDeleteClick, editMode, onUpdateClick, 
 NoteHero.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string
   }).isRequired).isRequired,
   currentNote: PropTypes.number,
   onDeleteClick: PropTypes.func.isRequired,

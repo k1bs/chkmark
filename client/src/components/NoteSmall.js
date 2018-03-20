@@ -11,7 +11,7 @@ const NoteSmall = ({ onCurrentClick, text }) => {
 
 NoteSmall.propTypes = {
   onCurrentClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string
 }
 
 export default NoteSmall
