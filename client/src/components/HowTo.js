@@ -6,7 +6,7 @@ const HowTo = () => {
       <h1>Using chk(mark)</h1>
       <p>Markdown isn't just for READMEs anymore!</p>
       <p>Take the Markdown you already know and use to to make your notes come to life.</p>
-      <p><a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' target='_blank'>Markdown</a> allows you to use Headers, insert codeblocks, emphasize and embolden text, and include images inline.</p>
+      <p><a href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet' target='_blank' rel='noopener noreferrer'>Markdown</a> allows you to use Headers, insert codeblocks, emphasize and embolden text, and include images inline.</p>
       <p>Simply click the <code>+</code> icon to create a new note, then use Markdown to style your new note as you wish!</p>
       <h1>For Example</h1>
       <p>For instance, entering something like:</p>
